@@ -30,9 +30,9 @@ else if (TempData["DeleteAlert"] != null)
 </p>
 <table class="table">
     <tr>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.EMPLOYEEID)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.NAME)
         </th>
@@ -51,17 +51,17 @@ else if (TempData["DeleteAlert"] != null)
         <th>
             @Html.DisplayNameFor(model => model.USERPASSWORD)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EMPROLE)
-        </th>
+        @*<th>
+            @Html.HiddenFor(model => model.EMPROLE)
+        </th>*@
         <th></th>
     </tr>
 
 
     <tr>
-        <td>
+        @*<td>
             @Html.DisplayFor(Model => Model.EMPLOYEEID)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(Model => Model.NAME)
         </td>
@@ -81,7 +81,7 @@ else if (TempData["DeleteAlert"] != null)
             @Html.DisplayFor(Model => Model.USERPASSWORD)
         </td>
         <td>
-            @Html.DisplayFor(Model => Model.EMPROLE)
+            @Html.HiddenFor(Model => Model.EMPROLE)
         </td>
         <td>
             <a href="@Url.Action("ADDOREDIT", "EMPLOYEEWEB", new { id = Model.EMPLOYEEID })">Edit</a>

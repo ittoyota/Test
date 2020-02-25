@@ -28,9 +28,9 @@ else if (TempData["DeleteAlert"] != null)
 </p>
 <table class="table">
     <tr>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.EMPLOYEEID)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.NAME)
         </th>
@@ -58,9 +58,9 @@ else if (TempData["DeleteAlert"] != null)
     @foreach (var item in Model)
     {
         <tr>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.EMPLOYEEID)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.NAME)
             </td>
