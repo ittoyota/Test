@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMPLOYEEDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EMPLOYEEDB.dbo.EMPDETAILS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="EMPDETAILS">
+    <Key>
+      <PropertyRef Name="DESIGNATION" />
+      <PropertyRef Name="AGE" />
+      <PropertyRef Name="SALARY" />
+    </Key>
+    <Property Name="EMPLOYEEID" Type="int" Nullable="false" />
+    <Property Name="NAME" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="DESIGNATION" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="AGE" Type="int" Nullable="false" />
+    <Property Name="SALARY" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="USERNAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="USERPASSWORD" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMPROLE" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EMPLOYEEDBModelStoreContainer">
+    <EntitySet Name="EMPDETAILS" EntityType="Self.EMPDETAILS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [EMPDETAILS].[EMPLOYEEID] AS [EMPLOYEEID], 
+    [EMPDETAILS].[NAME] AS [NAME], 
+    [EMPDETAILS].[DESIGNATION] AS [DESIGNATION], 
+    [EMPDETAILS].[AGE] AS [AGE], 
+    [EMPDETAILS].[SALARY] AS [SALARY], 
+    [EMPDETAILS].[USERNAME] AS [USERNAME], 
+    [EMPDETAILS].[USERPASSWORD] AS [USERPASSWORD], 
+    [EMPDETAILS].[EMPROLE] AS [EMPROLE]
+    FROM [dbo].[EMPDETAILS] AS [EMPDETAILS]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

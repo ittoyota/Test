@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMPLOYEEDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="EMPDETAIL">
+    <Key>
+      <PropertyRef Name="DESIGNATION" />
+      <PropertyRef Name="AGE" />
+      <PropertyRef Name="SALARY" />
+    </Key>
+    <Property Name="EMPLOYEEID" Type="Int32" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="DESIGNATION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AGE" Type="Int32" Nullable="false" />
+    <Property Name="SALARY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USERPASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMPROLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EMPLOYEEDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EMPDETAILS" EntityType="Self.EMPDETAIL" />
+  </EntityContainer>
+</Schema>

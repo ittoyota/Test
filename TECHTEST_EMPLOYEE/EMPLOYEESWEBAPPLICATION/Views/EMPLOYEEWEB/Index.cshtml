@@ -1,0 +1,92 @@
+﻿@model IEnumerable<EMPLOYEESWEBAPPLICATION.Models.EMPLOYEEDETAILS>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+@if (TempData["SavedAlert"] != null)
+{
+    <div class="alert alert-success">
+        <strong>@TempData["SavedAlert"]!</strong>
+    </div>
+}
+else if (TempData["UpdateAlert"] != null)
+{
+    <div class="alert alert-success">
+        <strong>@TempData["UpdateAlert"]!</strong>
+    </div>
+}
+else if (TempData["DeleteAlert"] != null)
+{
+    <div class="alert alert-danger">
+        <strong>@TempData["DeleteAlert"]!</strong>
+    </div>
+}
+<br />
+<p>
+    <a href="@Url.Action("ADDOREDIT","EMPLOYEEWEB")">Create a Record</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EMPLOYEEID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESIGNATION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SALARY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USERNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USERPASSWORD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMPROLE)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMPLOYEEID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DESIGNATION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AGE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SALARY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.USERNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.USERPASSWORD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMPROLE)
+            </td>
+            <td>
+                <a href="@Url.Action("ADDOREDIT", "EMPLOYEEWEB", new { id = item.EMPLOYEEID })">Edit</a>
+                <a href="@Url.Action("Delete", "EMPLOYEEWEB", new { id = item.EMPLOYEEID })">Delete</a>
+            </td>
+        </tr>
+    }
+
+</table>
